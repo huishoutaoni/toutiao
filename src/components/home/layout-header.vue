@@ -1,5 +1,6 @@
 <template>
-    <div>登录页面</div>
+<!-- 头部组件 -->
+    <div></div>
 </template>
 
 <script>

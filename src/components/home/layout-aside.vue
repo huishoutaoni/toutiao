@@ -1,5 +1,6 @@
 <template>
-    <div>登录页面</div>
+<!-- 左侧导航 -->
+    <div></div>
 </template>
 
 <script>
