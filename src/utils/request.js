@@ -8,7 +8,7 @@ axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0' // 赋值地�
 
 // 请求拦截
 axios.interceptors.request.use(function (config) {
-  console.log(config)
+  // console.log(config)
   // 执行ok
   // config 是axios的所有配置
   let token = window.localStorage.getItem('user-token') // 获取token
@@ -35,6 +35,10 @@ axios.interceptors.response.use(function (response) {
       break
     case 403:
       router.push('/login') // 强制回登录
+      break
+    case 401:
+      // token过期
+      router.push('/login')
       break
     case 507:
       message = '服务器数据库异常'

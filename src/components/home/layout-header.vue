@@ -37,18 +37,12 @@ export default {
       defaultImg: require('../../assets/img/header.jpg') // 先把地址转换成变量
     }
   },
-  created () {
-    let token = window.localStorage.getItem('user-token') // 获取令牌
-    // 查询数据
+  created () { // 查询数据
     this.$axios({
-      url: '/user/profile',
-      // headers参数
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
+      url: '/user/profile'
     }).then(result => {
       console.log(result)
-      this.userInfo = result.data.data // 获取用户个人信息
+      this.userInfo = result.data// 获取用户个人信息
     })
   },
   methods: {

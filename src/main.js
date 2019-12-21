@@ -1,14 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import './permission' // 引入js
 
 import './styles/index.less'// 引入初始化样式
 import ElementUI from 'element-ui' // 引入包
 import 'element-ui/lib/theme-chalk/index.css'// 引入element-ui样式
-import axios from 'axios' // 引入axios
+// import axios from 'axios' // 引入axios
+import axios from './utils/request'
 import Component from './components'
 
-axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0' // 赋值地址
+// axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0' // 赋值地址
 Vue.prototype.$axios = axios // 赋值给全局对象
 
 Vue.config.productionTip = false
