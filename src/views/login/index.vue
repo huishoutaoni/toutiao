@@ -79,7 +79,21 @@ export default {
           //   methods: 'post'
           // })
           //  认为前端校验登录表单成功
-          console.log('验证成功')
+          this.$axios({
+            url: '/authorizations', // 请求地址
+            method: 'post',
+            data: this.loginForm
+          }).then(result => {
+            window.localStorage.setItem('user-token', result.data.data.token)// 获取缓存令牌
+            this.$router.push('/home') // 跳转到主页
+            // 成功以后进入到then
+          }).catch(() => {
+            // element-ui 方法
+            this.$message({
+              message: '您的手机号或者验证码不正确',
+              type: 'warning'
+            })
+          })
         }
       })
     }
